@@ -1,0 +1,9 @@
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: Channel
+metadata:
+  name: argo-acm-jccm-ch
+  namespace: argo-acm-jccm
+spec:
+  type: GitHub
+  pathname: https://gitlab.cm.jccm.es/argo-acm.git

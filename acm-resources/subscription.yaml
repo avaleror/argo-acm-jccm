@@ -1,0 +1,16 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: Subscription
+metadata:
+  name: argo-acm-jccm-sub
+  namespace: openshift-gitops
+  labels:
+    app: argo-acm-jccm
+  annotations:
+    apps.open-cluster-management.io/git-path: argo-deploy
+    apps.open-cluster-management.io/git-branch: master
+spec:
+  channel: argo-acm-jccm/argo-acm-jccm-ch
+  placement:
+    placementRef:
+      kind: PlacementRule
+      name: argo-acm-jccm-pr

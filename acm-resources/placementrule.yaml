@@ -1,0 +1,11 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: argo-acm-jccm-pr
+  namespace: openshift-gitops
+  labels:
+    app: argo-acm-jccm
+spec:
+  clusterSelector:
+    matchLabels:
+      name: local-cluster

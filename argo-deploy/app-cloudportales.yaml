@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: portalescloud-root-app
+  namespace: openshift-gitops
+  labels:
+    argocd-root-app: "true"
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: openshift-gitops
+    name: in-cluster
+  project: default
+  syncPolicy:
+    automated: {}
+  source:
+    helm:
+      parameters:
+        - name: baseRepoUrl
+          value: https://gitlab.cm.jccm.es/web-movilidad/portales-cloud.git
+    path: argocd/root-apps
+    repoURL: https://gitlab.cm.jccm.es/web-movilidad/portales-cloud.git
+    targetRevision: HEAD
