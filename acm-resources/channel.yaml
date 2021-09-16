@@ -5,5 +5,5 @@ metadata:
   name: argo-acm-jccm-ch
   namespace: argo-acm-jccm
 spec:
-  type: GitHub
+  type: Git
   pathname: https://github.com/avaleror/argo-acm-jccm.git
